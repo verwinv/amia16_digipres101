@@ -1,0 +1,310 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section>
+					<h1>Session 2: Technical Writing and GitHub</h1>
+                    <h2>DigiPres101: Programming Basics and Preservation Tools </br> AMIA Conference 2016</h2>
+                    <small>Erwin Verbruggen </br> <a href="http://beeldengeluid.nl/en">Netherlands Institute for Sound and Vision</a></small>
+                    <aside class="notes">Testing the note here.</aside>
+				</section>
+				
+				<section>
+					<h1>Agenda</h1>
+					<ol>
+					<li>Technical Writing</li>
+						<ul>
+						<li>Requirements</li>
+						<li>User stories</li>
+						<li>Feedback</li>
+						</ul>
+					<li>GitHub</li>
+					<ul>
+						<li>GitBooks</li>
+					</ul>
+					<li>MediaWiki</li>
+					<ul>
+						<li>Wikipedia</li>
+						<li>Wikidata</li>
+					</ul>
+					</ol>
+				</section>						
+				
+				<section>
+					
+					<section>
+					<h1>1. Technical Writing</h1>
+					<img data-src="img/commandline.png" alt="Command Line">
+					<aside class="notes">You've just been given an introduction to the command line. We will now (mostly) revert to the domain of human-understandable language</aside>
+					</section>
+					
+					<section>
+					<h2>Why bother?</h2>
+					<ul>
+					<p class="fragment">Move your project/work forward</p>
+					<p class="fragment">Talk to your techie colleagues</p>
+					<p class="fragment">Participate in hackathons (tomorrow? <strong>#AVHackDay</strong>)</p>
+					<p class="fragment">Support <a href="https://github.com/amiaopensource/">open source projects</a></p>			
+					</ul>
+					</section>
+										
+					<section><h2>Things Developers Do (1)</h2>
+					<ul>
+					<p class="fragment">Discuss <strong>interface design</strong> with designers</p>
+					<ul>
+					<p class="fragment">Test a site on various browsers / devices</p>
+					<p class="fragment">Tweak the design when it doesn’t work on the browser/device</p>
+					</ul>
+					<p class="fragment">Write <strong>bug reports</strong></p>
+					<ul>
+					<p class="fragment">Reproduce bugs and confirm with the bug reporter that’s the problem</p>
+					<p class="fragment">Communicate about <strong>feature requests</strong> and bugs</p>
+					</ul>
+					</ul>
+					<pre>Source: <a href="https://www.haykranen.nl/2015/05/11/help-a-coder-even-if-you-cant-code/">Help a Coder, Even If You Can’t Code</a></pre>
+					<aside  class="notes">How can you, as a non-programmer help a coder? Coders actually don’t code that much.
+					‘Real’ coding, like typing code on a keyboard in a text editor, takes only between 2 to 3 hours during an average 8-hour workday. Things a typical web developer might do:
+					</aside>
+					</section>
+					
+					<section><h3>Things Developers Do (2)</h3>
+					<ul>
+					<p class="fragment">Google for error messages and how to fix specific bugs.</p>
+					<p class="fragment">Add test data to a CMS to check if it works.</p>
+					<p class="fragment">Clean up an Excel or CSV dump with data, or import it in a database.</p>
+					<p class="fragment">Sketch out possible solutions for a <strong>user story</strong></p>
+					<p class="fragment">Decide which task is most important</p>
+					<p class="fragment">Write blog posts, send tweets, make screenshots of the product</p>
+					</ul>
+					<pre>Source: <a href="https://www.haykranen.nl/2015/05/11/help-a-coder-even-if-you-cant-code/">Help a Coder, Even If You Can’t Code</a></pre>
+					<aside  class="notes">
+					=> None of these require writing a single line of code
+					</aside>
+					</section>
+					
+					<section><h2>Things Non-Coders Can Do (1)</h2>
+					<ul>
+					<p class="fragment">Flesh out user stories to exhaustively detail a specific function or workflow of the product.</p>
+					<p class="fragment">Create and/or tweak the interface design (Photoshop/Illustrator or simple paper prototyping)</p>
+					<p class="fragment">Test the product in all possible browser/OS combinations and write bug reports.</p>
+					<p class="fragment">Clean available data and export it to exchangeable formats (e.g. CSV).</p>
+					</ul>
+					<pre>Source: <a href="https://www.haykranen.nl/2015/05/11/help-a-coder-even-if-you-cant-code/">Help a Coder, Even If You Can’t Code</a></pre>
+					</section>
+					
+					<section><h3>Things non-coders can do (2)</h3>
+					<ul>
+					<p class="fragment">Write / blog / tweet about the product.</p>
+					<ul>
+					<p class="fragment">Create a video / graphic / presentation about the product</p>
+					<p class="fragment">Set up a blog / site / Facebook page showcasing the product</p>
+					</ul>
+					<p class="fragment">Fast and simple user testing</p>
+					<p class="fragment">Necessary paperwork - including <strong>documentation</strong></p>
+					</ul>
+					<pre>Source: <a href="https://www.haykranen.nl/2015/05/11/help-a-coder-even-if-you-cant-code/">Help a Coder, Even If You Can’t Code</a></pre>
+					</section>
+					
+					<section><h3>Things non-coders can do (3)</h3>
+					<ul>
+					<p class="fragment">Track usage of the product using an analytics package</p>
+					<p class="fragment">Communicate with clients / users / designers</p>
+					<p class="fragment">Fill the database / CMS with ‘real’ content</p>
+					<p class="fragment">Research hosting / catering / workspace</p>
+					<p class="fragment">Set up servers, hosting and deployment procedures (command line)</p>
+					<p class="fragment">Prioritisation and task assignment</p>
+					</ul>
+					<pre>Source: <a href="https://www.haykranen.nl/2015/05/11/help-a-coder-even-if-you-cant-code/">Help a Coder, Even If You Can’t Code</a></pre>
+					</section>
+					
+					<section><h3>Requirements (1)</h3>
+					<h4>Eliciting Requirements</h4>
+					<ul>
+					<p class="fragment">Interviews</p>
+					<p class="fragment">Focus Groups</p>
+					<p class="fragment">Requirement Workshops</p>
+					<p class="fragment">Surveys/Questionnaires</p>
+					<p class="fragment">Document Analysis</p>
+					<p class="fragment">Brainstorming</p>
+					<p class="fragment">Observation</p>
+					</ul>
+					</section>
+
+					<section data-markdown>
+					<script type="text/template">
+					### Requirements (2)
+					#### User Stories
+					As a... | I want to ... | On the system
+					--|--|--
+					User | Clear manual | available offline
+					Admin | restrict access | for specific user levels
+					</script>
+					</section>
+
+					<section><h3>Requirements (3)</h3>
+					<h4>Requirements in Open Source</h4>
+					The Power of the Mailing List
+					</section>
+
+
+					
+					<section><h3>Documentation</h3>
+					
+					<aside class="notes">One of the biggest sore spots for most open source software (and even proprietary software) is a lack of clear, concise documentation</aside>
+					</section>
+					
+					<section><h3>Feedback</h3>
+					<ul>
+					<p class="fragment">Try to make the problem specific but concise</p>
+					<p class="fragment">Explain exactly what you were doing to cause the error to occur</p>
+					<p class="fragment">Make sure to mention if you are able to make the bug repeat, or if it only happened once and not again</p>
+					<p class="fragment">Assign to person (if you know who should fix)</p>
+					<p class="fragment">Be brave, kind, assertive</p>
+					<pre>Source: <a href="http://ablwr.github.io/blog/2014/11/04/non-technical-persons-guide-to-becoming-an-open-source-software-contributor-via-github/">Non-Technical Person’s Guide to <br>Becoming an Open Source Software Contributor Via Github</a></pre>
+					</ul>
+					</section>
+
+					<section><h3>Feedback</h3>
+					<h3>Bug trackers I've (learned to) love</h3>
+					Mantis
+					</section>
+
+					<section><h3>Feedback</h3>
+					<h3>Bug trackers I've (learned to) love</h3>
+					GitHub
+					</section>
+				</section>
+				
+				<section>
+					<section>
+					<h1>2. GitHub</h1>
+					a distributed revision control system
+					<aside class="notes">
+					<ul>
+					- non-technical person
+					- kinda-technical person
+					- just-scared-of-git person
+					</ul>	
+					<p>there are apps for using Git like GitHub for Mac and Windows, or Tower; <br>
+					dozens of different text editors; <br>
+					and competitors to GitHub like Bitbucket, Google Code, or SourceForge</p></aside>
+					</section>
+
+					<section>
+					<h1>Version control</h1>
+					the <em>diff</em>
+					<!-- example: Wikipedia diff & commit -->
+					<aside class="notes">
+					don’t worry about fucking things up. It’s git: a distributed revision control system. Its entire purpose for existing is to protect against things getting fucked up</aside>
+					</section>
+
+					<section>
+					<h1>Parlance</h1>
+					DigiPres folks take note:
+					A <em>repository</em> is not a <em>repository</em>
+					<em>branching</em>
+					<em>merging</em>
+					<aside class="notes">Obligatory	OAIS joke</aside>
+					</section>
+
+					<section>
+					<h2>Using GitHub for Documentation</h2>
+					Adding & improving / Request to Change Things
+					<ul>
+					<p class="fragment">Make change => Commit changes</p>
+					<p class="fragment">Fork => Changes on your account only</p>
+					<p class="fragment">Pull request => Ask for changes in main codebase</p>
+					<p class="fragment">Peer review => Comments</p>
+					</ul>
+					Example: Testing on Ashley Blewer's GitHub https://github.com/ablwr/testing
+					</section>
+
+					<section>
+					<h2>Feedback, feature request, bugs</h2>
+					<h3>Issues</h3>
+					If there’s something bigger you want to fix but you don’t know how to do it, you can open an issue.
+					<ul>
+					<li>the best way to fix a problem is by doing it yourself</li>
+					<li>provide feedback and bring up problems</li>
+					</ul>
+					</section>
+
+
+					<section><h2>GitBooks</h2>
+					Library and cmd utility to generate GitBooks
+					</section>
+
+					<section>
+						<h2>Formatting: Markdown</h2>
+					</section>
+
+					<section>
+						<h2>Interface vs Command Line</h2>
+					</section>
+				</section>
+				
+				<section>
+					<h1>Check out at #AMIA16</h1>
+					<ul>
+					<li>Meeting: Open Source Committee<br>Thurs, Nov. 10, 12:00 PM @Carneigie III - Conference Level</a>.</li>
+					<li>AMIA <a href="https://github.com/amiaopensource/">Open Source GitHub</a></li>
+					</ul>
+					</section>
+				
+				<section>
+					<h1>Helpful Resources</h1>
+					<ul>
+					<li>Ashley Blewer (2014), <a href="http://ablwr.github.io/blog/2014/11/04/non-technical-persons-guide-to-becoming-an-open-source-software-contributor-via-github/">Non-Technical Person’s Guide to Becoming an Open Source Software Contributor Via Github</a>.</li>
+					<li>Lauren Sorensen (2014), <a href="http://www.slideshare.net/laurensorensen2/git-and-github-osp">Open Source and Digital Preservation and Access: Open Source Tools, Technologies and Considerations</a>. Presented at the 2014 AMIA Open Source Digital Preservation & Access Stream.</li>
+					<li>Hay Kranen (2015), <a href="https://www.haykranen.nl/2015/05/11/help-a-coder-even-if-you-cant-code/">Help a Coder, Even If You Can’t Code</a>.</li>
+					</ul>
+					</section>
+				
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true, 
+				slidenumber: true, 
+				progress: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
